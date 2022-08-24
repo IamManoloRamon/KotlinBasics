@@ -52,4 +52,23 @@ fun main(args: Array<String>) {
 
     val isNameEmpty = name.isEmpty();
     println(isNameEmpty)
+
+    // Conditional statement
+    val amount = 50
+    if (amount >= 1000) {
+        println("Wow... you are very wealthy!")
+    } else {
+            println("You are getting by")
+    }
+
+    when(amount) {
+        100 -> print("You have 100")
+        125 -> print("You are getting there...")
+        999 -> print("Really Close")
+        1000 -> print("Rich but not there...")
+        1100 -> print("You've made it!")
+        else -> {
+            print("$amount is just not going to work")
+        }
+    }
 }
