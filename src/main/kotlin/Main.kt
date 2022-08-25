@@ -54,21 +54,45 @@ fun main(args: Array<String>) {
     println(isNameEmpty)
 
     // Conditional statement
-    val amount = 50
+    val amount = 0
     if (amount >= 1000) {
         println("Wow... you are very wealthy!")
     } else {
-            println("You are getting by")
+        println("You are getting by")
     }
 
-    when(amount) {
-        100 -> print("You have 100")
-        125 -> print("You are getting there...")
-        999 -> print("Really Close")
-        1000 -> print("Rich but not there...")
-        1100 -> print("You've made it!")
+    when (amount) {
+        in 1..100 -> println("This amount is between 1 and 100")
+        !in 10..90 -> println("This amount is outside the range")
+        999 -> println("Really Close")
+        1000 -> println("Rich but not there...")
+        1100 -> println("You've made it!")
         else -> {
-            print("$amount is just not going to work")
+            println("$amount is just not going to work")
+        }
+    }
+
+    //For Loops
+    for (i in 1..1000) {
+        if (i % 3 == 0) println("$i is multiple of 3") else println("---")
+    }
+
+    //TODO: Functions - 7. Returning a Boolean
+    calculate(1, 10,"is multiple of", 3)
+    calculate(message = "Hello there!", multipleOf = 12)
+
+    val  catAge = calculateCatAge(age = 12) * 10
+    println("This cat is $catAge years old")
+}
+
+fun calculateCatAge(age: Int): Int = age * 7
+
+
+fun calculate(from: Int = 10, to: Int = 100, message: String, multipleOf: Int) {
+    for (i in from..to) {
+        if (i % multipleOf == 0) {
+            println("$i $message $multipleOf")
         }
     }
 }
+
