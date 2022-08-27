@@ -82,11 +82,49 @@ fun main(args: Array<String>) {
     calculate(message = "Hello there!", multipleOf = 12)
 
     val  catAge = calculateCatAge(age = 12) * 10
-    println("This cat is $catAge years old")
+    if (checkAge(catAge))
+        println("This cat is old ($catAge)")
+    else
+        println("This cat is young ($catAge)")
+
+    // Lambda function
+    println(sum(2, 5))
+    println(add(2, 5))
+
+    // Lambda expression return a Unit or Void
+    showName("Paul")
+
+    // Trailing Lambda
+    enhanceMessage("Hello there,") {
+        println(it)
+        add(12, 12)
+    }
+
+    //TODO: 2. Invoking Methods on Lists
 }
 
-fun calculateCatAge(age: Int): Int = age * 7
+fun enhanceMessage(message: String, funAsParameter: (String) -> Int) {
+    println("$message ${funAsParameter("Hey")}")
+}
 
+val showName: (String) -> Unit = { println("Hello my name is $it") }
+
+fun sum(a: Int, b: Int): Int {
+   return a + b
+}
+
+// Convert to lambda function
+var add: (Int, Int) -> Int = { a, b -> a + b}
+
+fun calculateCatAge(age: Int): Int = age * 7
+// Convert to lambda
+val calcAge: (Int) -> Int = { age -> age * 7}
+// Modification of Lambda
+val calAge1: (Int) -> Int =  {
+    it * 7 }
+fun checkAge(age: Int): Boolean {
+    return age > 14
+}
 
 fun calculate(from: Int = 10, to: Int = 100, message: String, multipleOf: Int) {
     for (i in from..to) {
