@@ -77,7 +77,7 @@ fun main(args: Array<String>) {
         if (i % 3 == 0) println("$i is multiple of 3") else println("---")
     }
 
-    //TODO: Functions - 7. Returning a Boolean
+    //Functions - 7. Returning a Boolean
     calculate(1, 10,"is multiple of", 3)
     calculate(message = "Hello there!", multipleOf = 12)
 
@@ -100,7 +100,7 @@ fun main(args: Array<String>) {
         add(12, 12)
     }
 
-    //TODO: 2. Invoking Methods on Lists
+    //2. Invoking Methods on Lists
 }
 
 fun enhanceMessage(message: String, funAsParameter: (String) -> Int) {
