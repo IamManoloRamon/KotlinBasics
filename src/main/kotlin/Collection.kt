@@ -46,5 +46,21 @@ fun main(args: Array<String>) {
     }
     println(myNewMutableList)
 
-    //TODO: 5. Empty Collections
+    //5. Empty Collections
+    val emptyList = emptyList<String>()
+    val emptySet = emptySet<Int>()
+    val emptyMap = emptyMap<String, String>()
+
+    //TODO: 6. Collection Filters
+    val  found = myListOfNames.filter {
+        // it == "Paul"
+        // it.length >= 5
+        // it.endsWith("l")
+        it.startsWith("r", ignoreCase = true) && it.endsWith('L', ignoreCase = true)
+    }
+    println(myListOfNames)
+    println(found)
+
+
+
 }
